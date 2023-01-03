@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62, 5%;
+}
+body {
+  background-image: url("../images/paper.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 8rem;
+  background-color: #d3f8f1;
+}
+nav {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+.navItem {
+  padding: 10px;
+  transform: translateY(5px);
+  transition: all 0.3s ease-in-out;
+  /* transform-origin: 0% 100%; */
+}
+.navItem::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 10px;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0;
+  background: linear-gradient(to bottom, #d3f8f1, gray);
+  -webkit-transform: scaleY(0);
+  transform: scaleX(0);
+  transform-origin: 0% 100%;
+  transition: 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.navItem:hover::after {
+  transition: 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+  transform: scaleX(1) scaleY(1);
+}
+.navItem:hover {
+  color: #d3f8f1;
+  border-radius: 10px;
+  text-shadow: 0 0 2px black;
+  transform: translateY(-5px);
+  filter: drop-shadow(-2px 4px 2px black);
+}
+.loginButton {
+  padding: 10px;
+  text-align: center;
+  background: linear-gradient(to bottom, #d3f8f1, #00392f);
+  border-radius: 10px;
+  color: white;
+}
+.loginButton:hover {
+  filter: drop-shadow(0 4px 2px black);
+  transition: 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+  scale: 1.1;
+  transform: translateY(-3px);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+span {
+  color: #d3f8f1;
+  text-shadow: 0 0 10px #00392f;
+}
+.main img {
+  box-shadow: 0 4px 15px black;
+  transition: all 0.2s ease-in-out;
+}
+.main img:hover {
+  scale: 1.1;
+}
