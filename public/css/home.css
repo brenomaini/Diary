@@ -1,0 +1,18 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+}
+span {
+  color: #d3f8f1;
+  text-shadow: 0 0 10px #00392f;
+}
+.home img {
+  box-shadow: 0 4px 15px black;
+  transition: all 0.2s ease-in-out;
+}
+.home img:hover {
+  scale: 1.1;
+}

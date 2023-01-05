@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="css/body.css" />
+    <link rel="stylesheet" type="text/css" href="css/write.css" />
+    <title>Diary - Write Now</title>
+  </head>
+  <body class="container">
+    <%- include("partials/headerLogedin")%>
+
+    <div class="post">
+      <!-- <%=variavel%> -->
+      <label for="Title" class="title">Day Title</label
+      ><input type="text" name="postTitle" id="Title" placeholder="Day title" />
+
+      <div class="dayRating">
+        <input type="radio" name="dayRatingFace" id="VeryHappy" />
+        <label for="VeryHappy" class="radioFace">😁</label>
+        <input type="radio" name="dayRatingFace" id="Happy" />
+        <label for="Happy" class="radioFace">😊</label>
+        <input type="radio" name="dayRatingFace" id="MoreOrLess" />
+        <label for="MoreOrLess" class="radioFace">😐</label>
+        <input type="radio" name="dayRatingFace" id="Sad" />
+        <label for="Sad" class="radioFace">🫤</label>
+        <input type="radio" name="dayRatingFace" id="VerySad" />
+        <label for="VerySad" class="radioFace">😔</label>
+      </div>
+
+      <label for="PostBody">Write</label
+      ><textarea
+        name="postBody"
+        id="PostBody"
+        cols="50"
+        rows="10"
+        placeholder="How's your day?"
+      ></textarea>
+
+      <button type="submit" form="postSave" id="PostSaveButton">Save Post</button>
+    </div>
+    <%- include('partials/footer') %>
+  </body>
+</html>

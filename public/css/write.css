@@ -1,0 +1,74 @@
+.radioFace {
+  filter: grayscale(1);
+}
+.radioFace:hover {
+  filter: grayscale(0);
+  scale: 1.2;
+}
+input[type="radio"]:checked + label {
+  filter: grayscale(0);
+  scale: 1.4;
+}
+input[type="radio"] {
+  visibility: hidden;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  box-shadow: 2px 2px 5px black;
+  width: 1rem;
+  height: 1rem;
+  transition: 180ms all ease-in-out;
+}
+input:focus {
+  scale: 1.05;
+  outline: 2px solid black;
+}
+input {
+  border-radius: 10px;
+}
+
+.dayRating::before {
+  content: "Your Mood";
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(15px);
+  text-decoration: underline;
+}
+.dayRating {
+  margin-top: 1rem;
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  width: 20rem;
+  box-shadow: 0px 2px 5px black;
+}
+.post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.1rem;
+  width: 25rem;
+  height: 65vh;
+  box-shadow: 0px 2px 5px black;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  font-size: 1.1rem;
+}
+
+#PostSaveButton {
+  width: 10rem;
+  height: 3rem;
+  background-color: rgb(52, 204, 198);
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  border: none;
+  box-shadow: 0px 2px 5px black;
+}
+#PostSaveButton:hover {
+  scale: 1.05;
+}

@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 62, 5%;
+}
+body {
+  background-image: url("../images/cool-background.svg");
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+input {
+  margin: 10px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  box-shadow: 2px 2px 5px black;
+  width: 15rem;
+  height: 1.7rem;
+  transition: 180ms all ease-in-out;
+}
+input:focus {
+  scale: 1.05;
+  outline: 2px solid black;
+}

@@ -4,10 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diary</title>
+    <link rel="stylesheet" type="text/css" href="css/body.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css" />
+    <title>Diary - Home</title>
   </head>
-  <body>
-    <%- include("partials/navbar", {title:"Diary - Login"})%> <%=variavel%>
-    Login
+  <body class="container">
+    <%- include("partials/header")%>
+
+    <div class="login">
+      <!-- <%=variavel%> -->
+
+      <img src="/images/login.svg" alt="loginIcon" srcset="" />
+      <form action="" id="LoginForm">
+        <label for="Email">E-mail:</label
+        ><input type="email" name="email" id="Email" required /><br /><label
+          for="Password"
+          >Password:</label
+        ><input type="password" name="password" id="Password" required />
+      </form>
+      <div id="WrognPW"></div>
+      <button type="submit" form="LoginForm">Login</button>
+    </div>
+    <%- include('partials/footer') %>
   </body>
 </html>
