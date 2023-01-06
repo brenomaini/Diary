@@ -19,7 +19,7 @@ module.exports = {
     return res.render("profile");
   },
   async posts(req, res) {
-    let posts = await Post.find();
+    let posts = await Post.find().sort({ date: -1 });
 
     return res.render("posts", { posts });
   },
@@ -47,11 +47,18 @@ module.exports = {
   },
 
   async editLoad(req, res) {
-    let id = req.params.id;
+    let id = req.query.id;
 
     let post = await Post.findById(id);
 
     res.render("edit", { post });
+  },
+  async editSave(req, res) {
+    const date = new Date().toLocaleDateString();
+    let post = { ...req.body, date };
+    await Post.findOneAndUpdate(post.id, post);
+
+    res.redirect("posts");
   },
 };
 

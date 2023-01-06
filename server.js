@@ -22,3 +22,4 @@ server.post("/write", pages.savePost);
 server.get("/posts", pages.posts);
 server.delete("/posts/:id", pages.deletePost);
 server.get("/edit", pages.editLoad);
+server.post("/edit:id", pages.editSave);

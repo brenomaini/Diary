@@ -5,21 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/body.css" />
-    <link rel="stylesheet" type="text/css" href="css/posts.css" />
-    <title>Diary - My Posts</title>
+    <link rel="stylesheet" type="text/css" href="css/write.css" />
+    <title>Diary - Write Now</title>
   </head>
   <body class="container">
     <%- include("partials/headerLogedin")%>
 
-    <div class="posts">
-      <br />
-      <div class="post">
-        <a class="editButton">Edit</a>
-        <button class="removeButton" onclick="deletePost">Remove</button>
-      </div>
-      <br />
-    </div>
+    <form
+      action="/edit<%=post.id%>"
+      method="post"
+      class="post"
+      id="postEditSave"
+    >
+      <label for="Title" class="title">Day Title</label
+      ><input
+        type="text"
+        name="title"
+        id="Title"
+        placeholder="Day title"
+        required
+        value="<%=post.title%>"
+        disabled
+      />
+
+      <div class="dayRating"><br /><br /><%=post.mood%></div>
+
+      <label for="PostBody">Write</label
+      ><textarea
+        name="body"
+        id="PostBody"
+        cols="50"
+        rows="50"
+        placeholder="How's your day?"
+        required
+      >
+<%=post.body%></textarea
+      >
+
+      <button type="submit" form="postEditSave" id="PostSaveButton">
+        Save Edit
+      </button>
+      <a href="/posts" class="cancelButton"> Cancel</a>
+    </form>
     <%- include('partials/footer') %>
-    <script src="scripts/script.js"></script>
   </body>
 </html>

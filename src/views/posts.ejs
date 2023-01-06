@@ -16,19 +16,33 @@
 
       <br />
       <div class="post" id="<%=post.id %>">
-        Title:<%=post.title%><br />
-        Date:<%=post.date%><br />
-        Mood:<%=post.mood%><br />
-        <a class="editButton" href="edit/?id=<%=post.id %>">Edit</a>
-        <button class="removeButton" onclick="deletePost('<%=post.id %>')">
-          Remove
-        </button>
+        <span class="info">Title</span><br />
+        <textarea disabled name="title" cols="15" rows="1">
+<%=post.title%></textarea
+        ><br />
+        <span class="info">Date</span><br /><%=post.date%><br />
+        <span class="info">Mood</span><br /><%=post.mood%><br />
+        <textarea name="" id="" cols="20" rows="1" disabled>
+<%=post.body%></textarea
+        >
+        <br />
+        <div class="buttons">
+          <a href="edit?id=<%=post.id %>"
+            ><img
+              class="editButton"
+              src="images/pencil.svg"
+              alt="PencilIcon"
+              srcset=""
+          /></a>
+          <button onclick="deletePost('<%=post.id %>')"></button>
+        </div>
       </div>
       <br />
 
       <% }) %>
     </div>
     <%- include('partials/footer') %>
+
     <script src="scripts/script.js"></script>
   </body>
 </html>

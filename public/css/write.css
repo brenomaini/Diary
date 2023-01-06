@@ -10,7 +10,7 @@ input[type="radio"]:checked + label {
   scale: 1.4;
 }
 input[type="radio"] {
-  visibility: hidden;
+  display: none;
   border-radius: 0 10px 10px 0;
   border: none;
   box-shadow: 2px 2px 5px black;
@@ -44,7 +44,8 @@ textarea {
   border-radius: 15px;
   display: flex;
   align-items: center;
-  height: 3rem;
+  justify-content: space-around;
+  height: 10rem;
   width: 20rem;
   box-shadow: 0px 2px 5px black;
 }
@@ -74,4 +75,10 @@ textarea {
 }
 #PostSaveButton:hover {
   scale: 1.05;
+}
+
+.cancelButton {
+  color: red;
+  filter: drop-shadow(0px 0px 10px white);
+  text-decoration: underline;
 }

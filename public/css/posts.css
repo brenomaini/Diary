@@ -1,0 +1,51 @@
+.editButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
+button {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  background-image: url("../images/delete.svg");
+}
+.editButton:hover,
+button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.post {
+  padding: 10px;
+  color: white;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
+  width: 15rem;
+}
+textarea {
+  resize: none;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.info {
+  font-size: 1rem;
+  color: black;
+}
+.posts {
+  height: 80vh;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  gap: 1rem;
+}
