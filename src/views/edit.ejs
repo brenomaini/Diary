@@ -12,21 +12,12 @@
     <%- include("partials/headerLogedin")%>
 
     <div class="posts">
-      <% posts.forEach((post)=>{ %>
-
       <br />
-      <div class="post" id="<%=post.id %>">
-        Title:<%=post.title%><br />
-        Date:<%=post.date%><br />
-        Mood:<%=post.mood%><br />
-        <a class="editButton" href="edit/?id=<%=post.id %>">Edit</a>
-        <button class="removeButton" onclick="deletePost('<%=post.id %>')">
-          Remove
-        </button>
+      <div class="post">
+        <a class="editButton">Edit</a>
+        <button class="removeButton" onclick="deletePost">Remove</button>
       </div>
       <br />
-
-      <% }) %>
     </div>
     <%- include('partials/footer') %>
     <script src="scripts/script.js"></script>

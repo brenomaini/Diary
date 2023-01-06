@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/body.css" />
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
-    <title>Diary - Write Now</title>
+    <title>Diary - Profile</title>
   </head>
   <body class="container">
     <%- include("partials/headerLogedin")%>
 
-    <div class="profile"></div>
+    <div class="profile">
+      Welcome!<%=name %><br />
+      You have already write: <%=posts.length %> Posts. <br />
+      Your last post was: <%=post[posts.length].date %>. <br />
+
+      Your positive days: <%=positive %>
+    </div>
     <%- include('partials/footer') %>
   </body>
 </html>

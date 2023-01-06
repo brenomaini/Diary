@@ -11,35 +11,43 @@
   <body class="container">
     <%- include("partials/headerLogedin")%>
 
-    <div class="post">
-      <!-- <%=variavel%> -->
+    <form action="" method="post" class="post" id="postSave">
       <label for="Title" class="title">Day Title</label
-      ><input type="text" name="postTitle" id="Title" placeholder="Day title" />
+      ><input
+        type="text"
+        name="title"
+        id="Title"
+        placeholder="Day title"
+        required
+      />
 
       <div class="dayRating">
-        <input type="radio" name="dayRatingFace" id="VeryHappy" />
+        <input type="radio" name="mood" id="VeryHappy" value="😁" required />
         <label for="VeryHappy" class="radioFace">😁</label>
-        <input type="radio" name="dayRatingFace" id="Happy" />
+        <input type="radio" name="mood" id="Happy" value="😊" required />
         <label for="Happy" class="radioFace">😊</label>
-        <input type="radio" name="dayRatingFace" id="MoreOrLess" />
+        <input type="radio" name="mood" id="MoreOrLess" value="😐" required />
         <label for="MoreOrLess" class="radioFace">😐</label>
-        <input type="radio" name="dayRatingFace" id="Sad" />
+        <input type="radio" name="mood" id="Sad" value="🫤" required />
         <label for="Sad" class="radioFace">🫤</label>
-        <input type="radio" name="dayRatingFace" id="VerySad" />
+        <input type="radio" name="mood" id="VerySad" value="😔" required />
         <label for="VerySad" class="radioFace">😔</label>
       </div>
 
       <label for="PostBody">Write</label
       ><textarea
-        name="postBody"
+        name="body"
         id="PostBody"
         cols="50"
-        rows="10"
+        rows="50"
         placeholder="How's your day?"
+        required
       ></textarea>
 
-      <button type="submit" form="postSave" id="PostSaveButton">Save Post</button>
-    </div>
+      <button type="submit" form="postSave" id="PostSaveButton">
+        Save Post
+      </button>
+    </form>
     <%- include('partials/footer') %>
   </body>
 </html>
