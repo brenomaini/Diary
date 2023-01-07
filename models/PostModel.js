@@ -4,5 +4,6 @@ const postSchema = new mongoose.Schema({
   mood: { type: String, required: true },
   date: { type: String, required: true },
   body: { type: String, required: true },
+  userEmail: { type: String, required: true },
 });
 module.exports = mongoose.model("Post", postSchema);

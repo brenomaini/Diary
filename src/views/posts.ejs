@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src-attr  'self' 'unsafe-inline'"
+    />
+
     <link rel="stylesheet" type="text/css" href="css/body.css" />
     <link rel="stylesheet" type="text/css" href="css/posts.css" />
     <title>Diary - My Posts</title>
@@ -34,7 +39,7 @@
               alt="PencilIcon"
               srcset=""
           /></a>
-          <button onclick="deletePost('<%=post.id %>')"></button>
+          <button></button>
         </div>
       </div>
       <br />

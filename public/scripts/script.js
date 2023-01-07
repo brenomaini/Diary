@@ -6,3 +6,11 @@ function deletePost(id) {
   });
 }
 
+const delButtons = document.getElementsByTagName("button");
+
+for (const button of delButtons) {
+  const postID = button.parentElement.parentElement.id;
+  button.addEventListener("click", () => {
+    deletePost(postID);
+  });
+}

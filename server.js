@@ -1,25 +1,38 @@
 const express = require("express");
 const path = require("path");
-const pages = require("./pages");
 const db = require("./database");
+const cookieparser = require("cookie-parser");
+const helmet = require("helmet");
+const authOkPages = require("./controllers/loggedUserPagesController");
+const freePages = require("./controllers/freePagesRoute");
+const auth = require("./controllers/authCheck");
 const server = express();
+const userRouter = require("./controllers/userController");
+const userController = require("./controllers/userController");
 
+server.use(helmet());
+server.use(cookieparser());
 server.set("views", path.join(__dirname, "src/views"));
 server.set("view engine", "ejs");
 server
   .use(express.urlencoded({ extended: true }))
+  .use(express.json())
   .use(express.static("public"));
 
 server.listen(3000, () => {
   console.log("Ativo na porta 3000");
 });
 
-server.get("/", pages.index);
-server.get("/createProfile", pages.create);
-server.get("/login", pages.login);
-server.get("/write", pages.write);
-server.post("/write", pages.savePost);
-server.get("/posts", pages.posts);
-server.delete("/posts/:id", pages.deletePost);
-server.get("/edit", pages.editLoad);
-server.post("/edit:id", pages.editSave);
+server.get("/", freePages.index);
+server.get("/createProfile", freePages.create);
+server.get("/login", freePages.login);
+server.post("/login", userController.login);
+server.get("/write", auth, authOkPages.write);
+server.post("/write", auth, authOkPages.savePost);
+server.get("/posts", auth, authOkPages.posts);
+server.delete("/posts/:id", auth, authOkPages.deletePost);
+server.get("/edit", auth, authOkPages.editLoad);
+server.post("/edit:id", auth, authOkPages.editSave);
+server.post("/createProfile", userRouter.register);
+server.post("/login", userRouter.login);
+server.get("/signOut", auth, userController.signOut);

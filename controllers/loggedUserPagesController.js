@@ -1,17 +1,8 @@
-const Post = require("./models/PostModel");
+const Post = require("../models/PostModel");
+const User = require("../models/UserModel");
+const jwt = require("jsonwebtoken");
+
 module.exports = {
-  index(req, res) {
-    res.render("home");
-  },
-  create(req, res) {
-    res.render("createProfile");
-  },
-  login(req, res) {
-    res.render("login");
-  },
-
-  /* ------------------------------ After Login ---------------------*/
-
   write(req, res) {
     return res.render("write");
   },
@@ -19,17 +10,25 @@ module.exports = {
     return res.render("profile");
   },
   async posts(req, res) {
-    let posts = await Post.find().sort({ date: -1 });
+    const userToken = req.cookies.authorization;
+    const decoded = jwt.verify(userToken, process.env.TOKEN_SECRET).email;
+
+    let posts = await Post.find({ userEmail: decoded }).sort({
+      date: -1,
+    });
 
     return res.render("posts", { posts });
   },
   async savePost(req, res) {
+    const userToken = req.cookies.authorization;
+    const decoded = jwt.verify(userToken, process.env.TOKEN_SECRET);
+    const userEmail = decoded.email;
+
     const date = new Date().toLocaleDateString();
-    const post = new Post({ ...req.body, date });
+    const post = new Post({ ...req.body, date, userEmail });
     try {
-      console.log(post);
-      post.save();
-      return res.render("write");
+      await post.save();
+      return res.redirect("posts");
     } catch (error) {
       console.log(error);
     }
@@ -61,15 +60,3 @@ module.exports = {
     res.redirect("posts");
   },
 };
-
-// app.get("/write", (req, res) => {
-//   res.render("write", { variavel: "teste" });
-// });
-// app.get("/myProfile", (req, res) => {
-//   res.render("profile", { variavel: "teste" });
-// });
-// app.get("/posts", async (req, res) => {
-//   let posts = await PostModel.find();
-
-//   res.render("posts", { posts });
-// });
