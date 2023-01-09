@@ -46,7 +46,7 @@ module.exports = {
       sameSite: "lax",
       maxAge: oneDay,
     });
-    res.render("write");
+    res.redirect("write");
   },
 
   async signOut(req, res) {
