@@ -36,7 +36,7 @@ module.exports = {
       return res.status(400).send("Email or Password incorrect");
 
     const token = jwt.sign(
-      { email: momentUser.email, id: momentUser.id },
+      { email: momentUser.email, name: momentUser.name },
       process.env.TOKEN_SECRET
       // { expiresIn: "60" }
     );

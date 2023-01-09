@@ -1,0 +1,26 @@
+.profile {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  height: 15rem;
+  backdrop-filter: blur(5px);
+  font-size: 2rem;
+}
+
+.username {
+  text-decoration: underline;
+  font-size: 4rem;
+  color: white;
+}
+.numbers {
+  font-size: 4rem;
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .username,
+  .numbers {
+    text-shadow: 0 0 5px black;
+  }
+}

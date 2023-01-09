@@ -3,7 +3,7 @@ const path = require("path");
 const db = require("./database");
 const cookieparser = require("cookie-parser");
 const helmet = require("helmet");
-const authOkPages = require("./controllers/loggedUserPagesController");
+const authOkPages = require("./controllers/loggedUserPages");
 const freePages = require("./controllers/freePagesRoute");
 const auth = require("./controllers/authCheck");
 const server = express();
@@ -25,14 +25,15 @@ server.listen(3000, () => {
 
 server.get("/", freePages.index);
 server.get("/createProfile", freePages.create);
+server.post("/createProfile", userRouter.register);
 server.get("/login", freePages.login);
+server.post("/login", userRouter.login);
 server.post("/login", userController.login);
 server.get("/write", auth, authOkPages.write);
 server.post("/write", auth, authOkPages.savePost);
 server.get("/posts", auth, authOkPages.posts);
 server.delete("/posts/:id", auth, authOkPages.deletePost);
+server.get("/myProfile", auth, authOkPages.profile);
 server.get("/edit", auth, authOkPages.editLoad);
-server.post("/edit:id", auth, authOkPages.editSave);
-server.post("/createProfile", userRouter.register);
-server.post("/login", userRouter.login);
+server.post("/edit", auth, authOkPages.editSave);
 server.get("/signOut", auth, userController.signOut);

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/body.css" />
+    <%- include("partials/headInfos")%>
+
     <link rel="stylesheet" type="text/css" href="css/profile.css" />
     <title>Diary - Profile</title>
   </head>
@@ -12,11 +10,16 @@
     <%- include("partials/headerLogedin")%>
 
     <div class="profile">
-      Welcome!<%=name %><br />
-      You have already write: <%=posts.length %> Posts. <br />
-      Your last post was: <%=post[posts.length].date %>. <br />
-
-      Your positive days: <%=positive %>
+      Welcome!<br />
+      <span class="username"><%=userInfos.name %>.</span><br />
+      You have already write:<br /><span class="numbers"
+        ><%=userInfos.posts %> Posts</span
+      >
+      <br />
+      Days with positive mood: <br /><span class="numbers"
+        ><%=userInfos.countPositive %></span
+      >
+      <br />
     </div>
     <%- include('partials/footer') %>
   </body>

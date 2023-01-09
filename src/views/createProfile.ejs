@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/body.css" />
+    <%- include("partials/headInfos")%>
+
     <link rel="stylesheet" type="text/css" href="css/createProfile.css" />
     <title>Create Profile</title>
   </head>
@@ -18,10 +16,22 @@
       <form method="post" id="CreateProfileForm">
         <fieldset>
           <label for="Name">Name:</label>
-          <input type="text" name="name" id="Name" required /><br />
+          <input
+            type="text"
+            name="name"
+            id="Name"
+            minlength="4"
+            required
+          /><br />
           E-Mail: <input type="email" name="email" id="Email" required /><br />
           Password:
-          <input type="password" name="password" id="Password" required /><br />
+          <input
+            type="password"
+            name="password"
+            id="Password"
+            required
+            minlength="6"
+          /><br />
           Confirm Password:
           <input
             type="password"
@@ -29,10 +39,14 @@
             id="CPassword"
             required
           /><br />
+          <div id="Error"></div>
         </fieldset>
       </form>
-      <button type="submit" form="CreateProfileForm">Create Profile</button>
+      <button type="submit" form="CreateProfileForm" id="CreateUser">
+        Create Profile
+      </button>
     </div>
     <%- include('partials/footer') %>
+    <script src="scripts/formValidate.js"></script>
   </body>
 </html>

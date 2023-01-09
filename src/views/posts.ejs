@@ -1,15 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src-attr  'self' 'unsafe-inline'"
-    />
+    <%- include("partials/headInfos")%>
 
-    <link rel="stylesheet" type="text/css" href="css/body.css" />
     <link rel="stylesheet" type="text/css" href="css/posts.css" />
     <title>Diary - My Posts</title>
   </head>
@@ -45,6 +38,10 @@
       <br />
 
       <% }) %>
+    </div>
+    <div id="PaginationButtons">
+      <a href="<%=previousURL %>" id="Previous">&laquo</a><a id="Next" href="<%=nextURL %>">&raquo</a>
+      
     </div>
     <%- include('partials/footer') %>
 

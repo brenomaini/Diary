@@ -3,12 +3,13 @@ header {
   align-items: center;
   justify-content: space-around;
   width: 100vw;
-  height: 10vh;
+  height: 8rem;
   background-color: rgba(56, 188, 189, 0.3);
   text-shadow: 0 0 2px white;
   margin-bottom: 1rem;
   font-weight: bolder;
   box-shadow: 0 0 5px black;
+  font-size: 4rem;
 }
 nav {
   width: 100vw;

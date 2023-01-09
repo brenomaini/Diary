@@ -5,9 +5,9 @@
   border-radius: 5px;
 }
 button {
+  border: none;
   width: 1.5rem;
   height: 1.5rem;
-  border: none;
   border-radius: 5px;
   background-color: red;
   background-image: url("../images/delete.svg");
@@ -18,6 +18,7 @@ button:hover {
   cursor: pointer;
 }
 .buttons {
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,6 +31,7 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 0 5px black;
   width: 15rem;
+  font-size: 1.5rem;
 }
 textarea {
   resize: none;
@@ -42,10 +44,44 @@ textarea {
 }
 .posts {
   height: 80vh;
-  width: 30rem;
+  width: 50rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  overflow-y: scroll;
+  flex-wrap: wrap;
   gap: 1rem;
+}
+#PaginationButtons {
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  height: 4rem;
+  text-shadow: 0 0 5px white;
+}
+#Next:hover,
+#Previous:hover {
+  transition: all ease-in-out;
+  scale: 1.1;
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+@media (max-width: 480px) {
+  textarea {
+    width: 10rem;
+    resize: none;
+    overflow: hidden;
+    border-radius: 3px;
+  }
+  .post {
+    padding: 5px;
+    color: white;
+    width: 12rem;
+    height: 20rem;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px black;
+  }
 }
